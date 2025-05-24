@@ -104,7 +104,7 @@ export const stripeWebhooks = async (req, res) => {
   // Stripe Gateway Initialise
   const stripeInstance = new stripe(process.env.STRIPE_SECRET_KEY);
 
-  const sig = request.headers["stripe-signature"];
+  const sig = req.headers["stripe-signature"];
   let event;
 
   try {
@@ -119,7 +119,7 @@ export const stripeWebhooks = async (req, res) => {
 
   // Handle the event
   switch (event.type) {
-    case "payment_intent.succeeeded": {
+    case "payment_intent.succeeded": {
       const paymentIntent = event.data.object;
       const paymentIntentId = paymentIntent.id;
 

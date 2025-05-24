@@ -13,7 +13,7 @@ const Loading = () => {
       if (nextUrl) {
         setTimeout(() => {
           navigate(`/${nextUrl}`);
-        }, 2500);
+        }, 5000);
       }
     }, [nextUrl]);
   return (

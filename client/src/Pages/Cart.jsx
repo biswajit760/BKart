@@ -87,6 +87,7 @@ const Cart = () => {
             quantity: item.quantity,
           })),
           address: selectedAddress._id,
+          paymentType: paymentOption,
         });
 
         if (data.success) {
